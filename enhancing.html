@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enquiry Sent | CP Residency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #dbeafe, #f8fafc);
+      color: #333;
+    }
+
+    .confirmation-container {
+      max-width: 600px;
+      margin: 5rem auto;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #22c55e;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin: 0.5rem 0;
+    }
+
+    .tick {
+      font-size: 3rem;
+      color: #16a34a;
+      margin-bottom: 1rem;
+    }
+
+    .home-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #1e40af;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .confirmation-container {
+        margin: 3rem 1rem;
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .tick {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="confirmation-container">
+    <div class="tick">✅</div>
+    <h1>Enquiry Sent!</h1>
+    <p>Your Enquiry at <strong>CP Residency</strong> has been successfully sent.</p>
+    <p>Our Staff will connect you soon!</p>
+    <a href="frontpage1.html" class="home-btn">🏠 Back to Home</a>
+  </div>
+
+</body>
+</html>

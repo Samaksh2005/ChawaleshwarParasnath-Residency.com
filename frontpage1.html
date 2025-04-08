@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CP Residency | Room Booking</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+  <style>
+    :root {
+      --primary: #1c2b55;
+      --accent: #99c9dc;
+      --bg: #bfc8d1;
+      --text: #0b1018;
+      --section-padding: 5rem 2rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #190a38;
+      color: rgb(249, 247, 247);
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    header h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+  height: 100vh;
+  background: url('building.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+    .gradient-text {
+  background: linear-gradient(to right, #ff6b6b, #f8c630, #3bd1ff, #845ec2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+
+    .hero-content {
+      background-color: rgba(227, 227, 241, 0.9);
+      padding: 3rem;
+      border-radius: 1.5rem;
+      max-width: 650px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    .hero h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: var(--section-padding);
+      max-width: 1100px;
+      margin: auto;
+    }
+  
+
+
+    h2.section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--primary);
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .amenities-grid,
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .amenity {
+      background: #c9d6e5;
+      padding: 1.8rem 1.2rem;
+      border-radius: 1.2rem;
+      text-align: center;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .amenity:hover {
+      transform: translateY(-5px);
+      background: #f0f9ff;
+    }
+
+    .gallery-grid img {
+  width: 100%;                /* Full width of grid cell */
+  height: 250px;              /* Fixed height */
+  object-fit: cover;          /* Crop to fit box without distortion */
+  border-radius: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+}
+
+
+    .book-btn,
+    .rules-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(to right, #111418, #3b44ac);
+      color: white;
+      border: none;
+      border-radius: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(81, 100, 131, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .book-btn:hover,
+    .rules-btn:hover {
+      background: linear-gradient(to right, #687ba5, #9cabdf);
+    }
+
+    footer {
+      background: #0b1527;
+      color: rgb(225, 226, 234);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+    .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.service-card {
+  background-color: #c9d6e5;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background-color: #f0f8ff;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin: 0 1rem;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home">
+    <img src="https://dynamic.design.com/asset/logo/4d66d133-1a15-4ac1-b9a1-c5e62931a671/logo-search-grid-2x?logoTemplateVersion=1&v=638792661669400000&text=CP+residency"
+         alt="CP Residency Logo" 
+         style="height: 80px; object-fit: contain;">
+  </a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#food">Food</a>
+    <a href="#book">Book</a>
+    <a href="#rules">Rules</a>
+    <a href="#Location">Location</a>
+
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content" data-aos="fade-up">
+    <h2>Welcome to CP Residency</h2>
+    <p>Smart, secure & student-friendly living space for Boys</p>
+  </div>
+</section>
+
+<section class="about" id="about" data-aos="fade-right">
+  <h2 class="section-title">About Us</h2>
+  <p style="text-align:center; max-width: 750px; margin:auto; font-size:1.1rem;">
+    CP Residency is your second home. We provide students with modern rooms, a safe environment, and a stress-free lifestyle. Our goal is to offer comfort, convenience, and community for a successful academic journey.
+  </p>
+</section>
+
+<section class="services" id="services" data-aos="fade-left">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Spacious Rooms</h3>
+        <p>Well-furnished rooms with modern amenities and storage space.</p>
+      </div>
+      <div class="service-card">
+        <h3>24/7 Medical Facilities</h3>
+        <p>Round-the-clock access to medical support for emergencies and checkups.</p>
+      </div>
+      <div class="service-card">
+        <h3>Reliable Wi-Fi</h3>
+        <p>Seamless high-speed internet access across the premises.</p>
+      </div>
+      <div class="service-card">
+        <h3>Nutritious Meals</h3>
+        <p>Delicious, nutritious meals prepared with the freshest ingredients.</p>
+      </div>
+      <div class="service-card">
+        <h3>Personalized Care</h3>
+        <p>Responsive management to cater to student needs and queries.</p>
+      </div>
+      <div class="service-card">
+        <h3>24/7 Security</h3>
+        <p>CCTV monitoring and secure entry systems for complete safety.</p>
+      </div>
+      <div class="service-card">
+        <h3>Laundry Facility</h3>
+        <p>On-site laundry service available for your convenience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Proximity to Educational Institutes</h3>
+        <p>Convenient location near major coaching centers and schools.</p>
+      </div>
+      <div class="service-card">
+        <h3>Healthy and Hygienic Mess</h3>
+        <p>Well-maintained kitchen and dining area with a focus on cleanliness.</p>
+      </div>
+      <div class="service-card">
+        <h3>Power Backup</h3>
+        <p>Uninterrupted electricity supply to ensure a comfortable stay.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+<section class="amenities" id="amenities" data-aos="zoom-in">
+  <h2 class="section-title">Amenities</h2>
+  <div class="amenities-grid">
+    <div class="amenity"><i class="fas fa-wind"></i> Air Conditioned Rooms</div>
+    <div class="amenity"><i class="fas fa-bath"></i> Attached Washroom</div>
+    <div class="amenity"><i class="fas fa-book-reader"></i> Study Zones</div>
+    <div class="amenity"><i class="fas fa-utensils"></i> Dining & Mess</div>
+    <div class="amenity"><i class="fas fa-bolt"></i> Power Backup</div>
+    <div class="amenity"><i class="fas fa-tv"></i> Recreation Lounge</div>
+    <div class="amenity"><i class="fas fa-tint"></i> 24x7 Hot Water</div>
+    <div class="amenity"><i class="fas fa-heart"></i> Personalized Care</div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery" data-aos="fade-up">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery-grid">
+    <img src=building.jpg alt="Room View">
+    <img src=reception.jpg alt="Mess Area">
+    <img src=office.jpg  alt="Reception">
+    <img src=room1.jpg  alt="Room View">
+    <img src=room3.jpg  alt="Reception">
+    <img src=washroom.jpg  alt="Reception">
+    <img src=coridor.jpg  alt="Reception">
+    <img src=coridor2.jpg  alt="Reception">
+    <img src=mess.jpg  alt="Reception">
+    <img src=mess1.jpg  alt="Reception">
+
+
+
+  </div>
+</section>
+
+<section class="food" id="food" data-aos="fade-up">
+  <h2 class="section-title">Food Services</h2>
+  <p style="max-width: 700px; text-align: center; margin: auto; font-size: 1.1rem;">
+    Enjoy healthy and hygienic meals served daily at CP Residency. Our mess provides nutritious breakfast, lunch, and dinner, accommodating various dietary preferences.
+  </p>
+</section>
+
+<section id="book" data-aos="zoom-in">
+  <h2 class="section-title">Book Your Room</h2>
+  <div style="text-align:center;">
+    <a href="roomtype1.html" class="book-btn">Book Now</a>
+  </div>
+</section>
+
+<section id="rules" data-aos="zoom-in">
+  <h2 class="section-title">Rules and Regulations</h2>
+  <div style="text-align:center;">
+    <a href="rules.html" class="rules-btn">Click Here</a>
+  </div>
+</section>
+
+<section id="location" data-aos="fade-up">
+  <h2 class="section-title">📍 Our Location</h2>
+  <p style="max-width: 700px; text-align: center; margin: auto; font-size: 1.1rem; margin-bottom: 2rem;">
+    We’re located in the heart of Kota, just a few minutes from major coaching institutes. Come visit us!
+  </p>
+  <div style="text-align:center;">
+    <a href="https://maps.app.goo.gl/x6wmRh75iEjk8zsr5?g_st=aw" target="_blank">
+      <img 
+        src="https://maps.googleapis.com/maps/api/staticmap?center=27.714929,85.314605&zoom=16&size=800x400&maptype=roadmap&markers=color:red%7Clabel:C%7C27.714929,85.314605" 
+        alt="CP Residency Location Map" 
+        style="width: 100%; max-width: 800px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </a>
+  </div>
+</section>
+
+
+<section class="contact" id="contact" data-aos="fade-up">
+  <h2 class="section-title">Enquire Now</h2>
+  <p style="max-width: 700px; text-align: center; margin: auto; font-size: 1.1rem;">
+    Have questions or need help with booking? Reach out to us – we're here to assist you!
+  </p>
+  <div style="text-align: center; margin-top: 2rem;">
+    <p><strong>Phone:</strong> +91 9983347489, 9983304950</p>
+    <p><strong>Email:</strong> <a href="mailto:cpresidency@gmail.com" style="color: var(--primary); text-decoration: none;">cpresidency@gmail.com</a></p>
+    <p><strong>Address:</strong> CP Residency, New Rajeev Gandhi Nagar, Near Oxy Zone, Kota – 324005</p>
+  </div>
+</section>
+
+
+<footer>
+  <p>&copy; 2025 CP Residency. All rights reserved. | Contact: +91 9983347489 | Email: cpresidency@gmail.com</p>
+</footer>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+
+</body>
+</html>

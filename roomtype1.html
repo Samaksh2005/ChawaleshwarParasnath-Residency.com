@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Your Room | CP Residency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f5f9);
+      margin: 0;
+      padding: 2rem;
+      color: #4b6a9b;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #1d4ed8;
+    }
+
+    .room-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #2563eb;
+    }
+
+    .security {
+      font-size: 0.95rem;
+      color: #f97316;
+      margin-bottom: 1.5rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #1d4ed8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #3c4f79;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Room Type</h1>
+  <div class="room-options">
+    <div class="card">
+      <h2>Single Room with Balcony</h2>
+      <div class="price">₹14,000 / month</div>
+      <div class="security">+ ₹14,000 Security Deposit (One-time)</div>
+      <p>Enjoy a spacious single room with a private balcony and fresh air every morning.</p>
+      <a href="roombooking1.html" class="btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <h2>Single Room without Balcony</h2>
+      <div class="price">₹12,000 / month</div>
+      <div class="security">+ ₹12,000 Security Deposit (One-time)</div>
+      <p>A comfortable single room option that offers great value and cozy space.</p>
+      <a href="roombooking1.html" class="btn">Book Now</a>
+    </div>
+  </div>
+</body>
+</html>
